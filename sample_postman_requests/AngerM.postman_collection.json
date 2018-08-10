@@ -1,0 +1,42 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AngerM",
+		"_postman_id": "58a2b1bd-11d4-cd50-2bd7-1d0b3ed97954",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"url": "http://localhost:3333/anger/management/register/activate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\":\"snehalckute@yahoo.co.in\",\r\n\t\"activationCode\":\"1\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
