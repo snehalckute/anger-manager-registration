@@ -3,19 +3,44 @@
  */
 package com.brainwave.anger.manager.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
 /**
  * @author kutesneh
  *
  */
-public class RegistrationRequestBean {
+@Entity
+public class Registration {
 	
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USR_SEQ")
+    @SequenceGenerator(sequenceName = "user_seq", allocationSize = 1, name = "USR_SEQ")
+    private Long id;
 	private String email;
 	private String password;
 	private String firstName;
 	private String lastName;
 	private String phoneCountryCode;
 	private String phoneNumber;
-	private boolean isTermsAndConditionsAgreed;
+	private char isTermsAndConditionsAgreed;
+	
+	
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
 	/**
 	 * @return the email
 	 */
@@ -65,18 +90,31 @@ public class RegistrationRequestBean {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
 	/**
 	 * @return the isTermsAndConditionsAgreed
 	 */
-	public boolean isTermsAndConditionsAgreed() {
+	public char getIsTermsAndConditionsAgreed() {
 		return isTermsAndConditionsAgreed;
 	}
 	/**
 	 * @param isTermsAndConditionsAgreed the isTermsAndConditionsAgreed to set
 	 */
-	public void setTermsAndConditionsAgreed(boolean isTermsAndConditionsAgreed) {
+	public void setIsTermsAndConditionsAgreed(char isTermsAndConditionsAgreed) {
 		this.isTermsAndConditionsAgreed = isTermsAndConditionsAgreed;
 	}
+	/**
+	 * @return the isTermsAndConditionsAgreed
+	 *//*
+	public Boolean getIsTermsAndConditionsAgreed() {
+		return isTermsAndConditionsAgreed;
+	}
+	*//**
+	 * @param isTermsAndConditionsAgreed the isTermsAndConditionsAgreed to set
+	 *//*
+	public void setIsTermsAndConditionsAgreed(Boolean isTermsAndConditionsAgreed) {
+		this.isTermsAndConditionsAgreed = isTermsAndConditionsAgreed;
+	}*/
 	/**
 	 * @return the phoneCountryCode
 	 */
