@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.brainwave.anger.manager.bean.ActivateRequestBean;
 import com.brainwave.anger.manager.bean.ActivateResponseBean;
+import com.brainwave.anger.manager.bean.LoginResponseBean;
 import com.brainwave.anger.manager.bean.Registration;
 import com.brainwave.anger.manager.bean.RegistrationResponseBean;
 import com.brainwave.anger.manager.service.RegistrationService;
@@ -34,26 +35,20 @@ public class AngerManagerController {
 	public @ResponseBody String test(){
 		return "test";
 	}
-
-	@GetMapping("activate/{uniqueId}")
-	public @ResponseBody boolean activate(@PathVariable String uniqueId) {
-		System.out.println("uniqueId : "+uniqueId);
-		boolean flag = false;
-		if(flag == false) {
-			flag = true;
-		}
-		
-		return flag;
-	}
 	
 	@PostMapping("register")
 	public @ResponseBody RegistrationResponseBean register(@RequestBody Registration registration) {
 		return registrationService.register(registration);
 	}
 	
-	@PostMapping("register/activate")
-	public @ResponseBody ActivateResponseBean activateProfile(@RequestBody ActivateRequestBean activateRequestBean) {
-		return registrationService.activateProfile(activateRequestBean);
+	@GetMapping("activate/{activationCode}")
+	public @ResponseBody ActivateResponseBean activateProfile(@PathVariable Long activationCode) {
+		return registrationService.activateProfile(activationCode);
+	}
+	
+	@PostMapping("login")
+	public @ResponseBody LoginResponseBean login(@RequestBody Registration login) {
+		return registrationService.login(login);
 	}
 }
 	

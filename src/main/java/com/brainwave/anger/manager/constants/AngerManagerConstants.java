@@ -16,7 +16,7 @@ public class AngerManagerConstants {
 	
 	public enum EVENT
 	{
-	    REGISTER, ACTIVATE_PROFILE, LOGIN, LOGOUT;
+	    REGISTER, ACTIVATE_PROFILE, LOGIN, LOGOUT, ERROR, HOME;
 	}
 
 }

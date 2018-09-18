@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "Register",
+			"name": "Activate",
 			"request": {
 				"url": "",
 				"method": "GET",
@@ -33,6 +33,26 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n\t\"email\":\"snehalckute@yahoo.co.in\",\r\n\t\"activationCode\":\"1\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"url": "http://localhost:3333/anger/management/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\":\"abc@yahoo.co.in\",\r\n\t\"password\":\"123\"\r\n}"
 				},
 				"description": ""
 			},

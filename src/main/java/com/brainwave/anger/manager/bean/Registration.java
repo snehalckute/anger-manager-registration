@@ -3,11 +3,15 @@
  */
 package com.brainwave.anger.manager.bean;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
 
 /**
  * @author kutesneh
@@ -15,6 +19,14 @@ import javax.persistence.SequenceGenerator;
  */
 @Entity
 public class Registration {
+	
+/*	@Entity
+	public class GeneralSequenceNumber {
+	  @Id
+		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACTIVATION_CODE_SEQ")
+	    @SequenceGenerator(sequenceName = "activation_code_seq", allocationSize = 1, name = "ACTIVATION_CODE_SEQ")
+	  private Long activationCode;
+	}*/
 	
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USR_SEQ")
@@ -28,7 +40,36 @@ public class Registration {
 	private String phoneNumber;
 	private char isTermsAndConditionsAgreed;
 	
+	@Column(unique = true)
+	private Long activationCode;
 	
+	private boolean isAccountActive;
+	
+	
+	/**
+	 * @return the isAccountActive
+	 */
+	public boolean isAccountActive() {
+		return isAccountActive;
+	}
+	/**
+	 * @param isAccountActive the isAccountActive to set
+	 */
+	public void setAccountActive(boolean isAccountActive) {
+		this.isAccountActive = isAccountActive;
+	}
+	/**
+	 * @return the activationCode
+	 */
+	public Long getActivationCode() {
+		return activationCode;
+	}
+	/**
+	 * @param activationCode the activationCode to set
+	 */
+	public void setActivationCode(Long activationCode) {
+		this.activationCode = activationCode;
+	}
 	/**
 	 * @return the id
 	 */

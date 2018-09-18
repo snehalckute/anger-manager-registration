@@ -3,6 +3,7 @@
  */
 package com.brainwave.anger.manager.service.dao.repo;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,16 +16,16 @@ import com.brainwave.anger.manager.bean.Registration;
 @Service
 public interface RegistrationRepository extends CrudRepository<Registration, Long> {
 
-	/*
-	 * List<Customer> findByEmail(String email);
-	 * 
-	 * List<Customer> findByDate(Date date);
-	 */
-
 	// custom query example and return a stream
 	/*
 	 * @Query("select c from Customer c where c.email = :email") Stream<Customer>
 	 * findByEmailReturnStream(@Param("email") String email);
 	 */
-
+	
+	@Query(value = "SELECT activation_code_seq.nextval FROM dual", nativeQuery = true)
+	public Long getNextSeriesId();
+	
+	public Registration findByActivationCode(Long activationCode);
+	
+	public Registration findByEmailAndPasswordAndIsAccountActive(String email, String password, boolean isActive);
 }

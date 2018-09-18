@@ -1,0 +1,3 @@
+1. Validation of whether mail Id to be registered is already available in DB
+2. Regenerate and Resend activation code
+3. Activation url should contain activation code and user id both
