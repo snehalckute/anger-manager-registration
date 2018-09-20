@@ -3,11 +3,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.3.RELEASE</version>
+		<!-- <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-parent</artifactId> 
+			<version>2.0.3.RELEASE</version> -->
+
+		<groupId>com.brainwave-main-multi</groupId>
+		<artifactId>anger-manager-parent-multi</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+
 	</parent>
-	<groupId>com.brainwave</groupId>
+	<groupId>com.brainwave.functional</groupId>
 	<artifactId>anger-manager-registration</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>anger-manager-registration</name>
@@ -24,9 +28,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter</artifactId> 
-			</dependency> -->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -39,21 +40,21 @@
 		</dependency>
 
 		<!-- Oracle JDBC driver -->
-		<dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc6</artifactId> 
-			<version>11.2.0.3</version> </dependency> 
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+		</dependency>
 
 		<!-- HikariCP connection pool -->
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
-			<version>2.6.0</version>
 		</dependency>
-		
+
 		<dependency>
-	<groupId>com.sun.mail</groupId>
-	<artifactId>javax.mail</artifactId>
-	<version>1.5.5</version>
-</dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -62,15 +63,8 @@
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
-			<version>3.6.4</version>
 		</dependency>
 	</dependencies>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+	<!-- <build> <plugins> <plugin> <groupId>org.springframework.boot</groupId> 
+		<artifactId>spring-boot-maven-plugin</artifactId> </plugin> </plugins> </build> -->
 </project>

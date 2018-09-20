@@ -28,8 +28,8 @@ public class MailSenderService {
 	
 	public String host = "smtp.gmail.com";
     public String port = "587";
-    public String password = "SKsksk686888";
-    public String username = "snehalckute@gmail.com";
+    public final String password = "SKsksk686888";
+    public final String username = "snehalckute@gmail.com";
     
     
     
@@ -108,7 +108,7 @@ public class MailSenderService {
 
        }
        
-       private void createSession(Session l_session, String username, String password, Properties props) {
+       private void createSession(Session l_session, final String username, final String password, Properties props) {
 
            l_session = Session.getInstance(props,
                    new javax.mail.Authenticator() {
